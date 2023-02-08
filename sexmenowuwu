@@ -1,0 +1,26 @@
+    local games = {
+        [{9157605735}] = 'lol stupid fuck'; -- misc gun test x 
+        [{735030788}] = 'r u srs bro' -- royale high fuck
+    };
+
+    local sg = game:GetService('StarterGui')
+
+    local function Notify(Title,Text,Duration)
+        sg:SetCore('SendNotification',{
+            Title = Title;
+            Text = Text;
+            Duration = Duration;
+        })
+    end
+
+    if not game:IsLoaded() then return end
+    if getfenv().SARR_SCRIPT_LOADED then return end
+
+        for __ids, __ld in next, games do
+            if table.find(__ids,game.PlaceId) then
+                loadstring(game:HttpGet('https://raw.githubusercontent.com/Xiaqqq/SARR/main/LOADER_LOG',true))
+                print(__ld) getfenv().SARR_SCRIPT_LOADED = true break;
+            else
+                Notify('SARR','Experience is not supported! Suggest it in our Discord server!',2) break;
+            end
+        end
